@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+from configparser import ConfigParser
+from pyslice import PySlice
+import os
+
+# Setup Config
+config_file = 'config.conf'
+config = ConfigParser()
+
+try:
+  config.read(config_file)
+except IOError as e:
+  print("Error: " + os.strerror(e.errno))
+  os._exit(1)
+
+# Validate all required config options are set
+required_keys = set(['auth_url','username','password','tenant'])
+cvalues        = dict(config.items('main'))
+found_keys    = set(dict(config.items('main')).keys())
+
+if (required_keys - found_keys):
+  print("Error: Missing Required Options!")
+  print("Please set the following via the 'main' section in {}: {}".format(config_file, required_keys - found_keys))
+  os._exit(2)
+
+slice = PySlice()
+slice.authenticate(cvalues)
+slice.get_floating_host_entries(type='puppet')
+
+
+
+
+
+
+
+
+
+

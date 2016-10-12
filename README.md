@@ -1,0 +1,3 @@
+pyslice - OpenStack Python Automation
+=====================================
+
