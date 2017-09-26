@@ -1,0 +1,5 @@
+venv*
+**/*pyc
+build
+dist
+pyslice.egg-info

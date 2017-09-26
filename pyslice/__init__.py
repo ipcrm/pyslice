@@ -1,1 +1,1 @@
-from pyslice.pyslice import PySlice
+from .pyslice import PySlice
