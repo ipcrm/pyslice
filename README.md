@@ -9,6 +9,7 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements
 ```
-2. Change the config file (openstack auth url is of the form: `$openstack-endpoint:5000/v2.0`)
-3. `./slice | sudo puppet apply`
-4. Profit!
+2. Copy config.conf.default to config.conf
+3. Change config.conf to match your configuration
+4. `./slice | sudo puppet apply`
+5. Profit!
