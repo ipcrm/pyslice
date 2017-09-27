@@ -1,0 +1,5 @@
+[main]
+auth_url: <your_openstack_endpoint>:5000/v2.0
+username:
+password:
+tenant: <your_openstack_project_name>
